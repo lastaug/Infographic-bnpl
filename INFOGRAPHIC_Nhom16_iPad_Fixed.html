@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bộ 3 Trang Infographic Tài Chính Cá Nhân – Giải Phẫu Bẫy BNPL (Apple Editorial Style)</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Plus Jakarta Sans (chuẩn tỷ lệ SF Pro Display / Text hỗ trợ tiếng Việt tuyệt đối) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- html2canvas for 3x Ultra-HD PNG Export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    :root {
+      --apple-white: #FFFFFF;
+      --apple-gray-bg: #F5F5F7;
+      --apple-ink: #1D1D1F;
+      --apple-muted: #6E6E73;
+      --apple-border: #D2D2D7;
+      --apple-dark: #111113;
+      /* 3 màu chủ đạo từ 3 ứng dụng BNPL */
+      --brand-shopee: #F05123;
+      --brand-tiktok: #1D1D1F;
+      --brand-momo: #A50064;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Plus Jakarta Sans", sans-serif;
+      background-color: #E8E8ED;
+      color: var(--apple-ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+
+    /* Typography & Spacing calibrated to Apple Marketing Pages (Images 1–6) */
+    .apple-display-hero {
+      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.032em;
+      line-height: 1.08;
+      color: var(--apple-ink);
+    }
+
+    .apple-section-title {
+      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+    }
+
+    .apple-eyebrow {
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .apple-body-copy {
+      font-weight: 400;
+      font-size: 14.5px;
+      letter-spacing: -0.011em;
+      line-height: 1.58;
+      color: var(--apple-muted);
+    }
+
+    .apple-stat-giant {
+      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.038em;
+      line-height: 1.02;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .apple-footnote {
+      font-size: 11px;
+      line-height: 1.55;
+      letter-spacing: -0.005em;
+      color: #6E6E73;
+    }
+
+    /* Page Sheet Container (3 Distinct Pages) */
+    .apple-page-sheet {
+      width: 1120px;
+      margin: 0 auto;
+      background-color: var(--apple-white);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.10), 0 1px 3px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    /* Image 5 & 6 Top Sleek Dark Navigation Bar */
+    .apple-top-nav {
+      background: linear-gradient(180deg, #2C2C2E 0%, #1C1C1E 100%);
+      color: #F5F5F7;
+      height: 44px;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    /* Image 2, 5, 6 Sub-Header Title Bar */
+    .apple-sub-nav {
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--apple-border);
+      padding: 16px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Image 3 & 4 Soft Gray Feature Card (#F5F5F7) */
+    .apple-card-gray {
+      background-color: var(--apple-gray-bg);
+      border-radius: 24px;
+    }
+
+    /* Dark Spotlight Section (Requested for key highlight) */
+    .apple-card-dark {
+      background: radial-gradient(120% 140% at 50% 0%, #242429 0%, #0D0D0F 100%);
+      color: #F5F5F7;
+      border-radius: 28px;
+    }
+
+    /* Image 2 "Refurbished Mac" Vertical Hairline Columns */
+    .apple-hairline-cols > div:not(:last-child) {
+      border-right: 1px solid var(--apple-border);
+    }
+
+    /* Image 6 Pill Button ("Buy now (+)" style) */
+    .apple-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      background-color: #E8E8ED;
+      color: var(--apple-ink);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .apple-pill-badge-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      background-color: #1D1D1F;
+      color: #FFFFFF;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+
+    /* Responsive layout for iPad/tablets and phones */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body { margin: 0; min-width: 0; overflow-x: hidden; }
+    .apple-page-sheet {
+      width: min(1120px, calc(100% - 32px));
+      max-width: 100%;
+    }
+    main { min-width: 0; }
+    .apple-page-sheet img,
+    .apple-page-sheet svg { max-width: 100%; }
+    .apple-page-sheet h1,
+    .apple-page-sheet h2,
+    .apple-page-sheet h3,
+    .apple-page-sheet p,
+    .apple-page-sheet span,
+    .apple-page-sheet strong { overflow-wrap: anywhere; }
+
+    @media (max-width: 1100px) {
+      .apple-page-sheet { border-radius: 18px; }
+      .apple-top-nav { height: auto; min-height: 44px; padding: 12px 24px; gap: 10px; flex-wrap: wrap; }
+      .apple-top-nav > div { min-width: 0; flex-wrap: wrap; gap: 10px; }
+      .apple-sub-nav { padding: 16px 28px; gap: 12px; flex-wrap: wrap; }
+      .apple-page-sheet .px-14 { padding-left: 28px !important; padding-right: 28px !important; }
+      .apple-page-sheet .px-10 { padding-left: 24px !important; padding-right: 24px !important; }
+      .apple-page-sheet .gap-10 { gap: 1.5rem !important; }
+      .apple-page-sheet .gap-8 { gap: 1.25rem !important; }
+      .apple-page-sheet .gap-6 { gap: 1rem !important; }
+      .apple-page-sheet .apple-stat-giant { overflow-wrap: normal; }
+      .apple-page-sheet .apple-sub-nav > div:first-child { min-width: 0; }
+      .apple-page-sheet .apple-hairline-cols > div { padding-left: 16px !important; padding-right: 16px !important; }
+    }
+
+    @media (max-width: 820px) {
+      body { padding-bottom: 24px; }
+      header.no-print { padding-left: 12px !important; padding-right: 12px !important; }
+      header.no-print > div,
+      header.no-print .max-w-\[1120px\] { max-width: 100%; }
+      header.no-print .text-xs { line-height: 1.45; }
+      .apple-page-sheet { width: calc(100% - 16px); margin: 0 auto; border-radius: 14px; }
+      main.max-w-\[1160px\] { padding-left: 4px !important; padding-right: 4px !important; padding-top: 12px !important; }
+      .apple-top-nav { padding: 12px 16px; font-size: 11px; }
+      .apple-top-nav > div { width: 100%; }
+      .apple-sub-nav { padding: 14px 16px; align-items: flex-start; flex-direction: column; }
+      .apple-page-sheet .px-14,
+      .apple-page-sheet .px-10 { padding-left: 16px !important; padding-right: 16px !important; }
+      .apple-page-sheet .pt-12 { padding-top: 28px !important; }
+      .apple-page-sheet .pb-12 { padding-bottom: 28px !important; }
+      .apple-page-sheet .py-11,
+      .apple-page-sheet .py-10,
+      .apple-page-sheet .py-9 { padding-top: 24px !important; padding-bottom: 24px !important; }
+      .apple-page-sheet .p-10 { padding: 18px !important; }
+      .apple-page-sheet .p-6,
+      .apple-page-sheet .p-5 { padding: 14px !important; }
+
+      /* Collapse multi-column content so it remains readable in portrait orientation. */
+      .apple-page-sheet .grid-cols-12,
+      .apple-page-sheet .grid-cols-3,
+      .apple-page-sheet .grid-cols-4 {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+      .apple-page-sheet .col-span-5,
+      .apple-page-sheet .col-span-7,
+      .apple-page-sheet .col-span-12 {
+        grid-column: 1 / -1 !important;
+      }
+      .apple-page-sheet .apple-hairline-cols { border-top: 1px solid var(--apple-border); }
+      .apple-page-sheet .apple-hairline-cols > div {
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--apple-border);
+        padding: 20px 0 !important;
+      }
+      .apple-page-sheet .apple-hairline-cols > div:last-child { border-bottom: 0; }
+      .apple-page-sheet .apple-card-gray { border-radius: 16px; }
+      .apple-page-sheet .apple-card-dark { border-radius: 18px; }
+      .apple-page-sheet .apple-display-hero { font-size: clamp(28px, 7vw, 42px) !important; }
+      .apple-page-sheet .apple-section-title { font-size: clamp(22px, 5.5vw, 30px) !important; }
+      .apple-page-sheet .apple-stat-giant { font-size: clamp(24px, 6vw, 36px) !important; }
+      .apple-page-sheet .apple-sub-nav .text-lg { font-size: 16px; }
+      .apple-page-sheet .apple-sub-nav .text-xs { line-height: 1.5; }
+      .apple-page-sheet .flex.items-center.justify-between { flex-wrap: wrap; gap: 10px; }
+      .apple-page-sheet .h-10.rounded-2xl { height: auto; min-height: 40px; }
+      .apple-page-sheet .h-10.rounded-2xl > div { padding: 8px 4px; text-align: center; overflow-wrap: anywhere; }
+      .apple-page-sheet footer { padding: 20px 16px !important; }
+      #customDrawer .grid-cols-12 { grid-template-columns: minmax(0, 1fr) !important; }
+      #customDrawer .col-span-5,
+      #customDrawer .col-span-7 { grid-column: 1 / -1 !important; }
+    }
+
+    @media (max-width: 420px) {
+      .apple-page-sheet .text-\[11px\],
+      .apple-page-sheet .text-\[11\\.5px\] { font-size: 12px !important; }
+      .apple-page-sheet .apple-pill-badge,
+      .apple-page-sheet .apple-pill-badge-dark { white-space: normal; }
+      .apple-page-sheet .grid-cols-2 { grid-template-columns: minmax(0, 1fr) !important; }
+    }
+
+    @media print {
+      body {
+        background: #FFFFFF !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .apple-page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-24">
+
+  <!-- ===================================================================== -->
+  <!-- STICKY EXPORT & CUSTOMIZATION TOOLBAR (NOT IN EXPORTED IMAGES)        -->
+  <!-- ===================================================================== -->
+  <header class="no-print sticky top-0 z-50 backdrop-blur-xl bg-white/90 border-b border-black/10 px-6 py-3 shadow-sm">
+    <div class="max-w-[1120px] mx-auto flex flex-wrap items-center justify-between gap-3">
+      <!-- Left Info -->
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-[#1D1D1F] text-white flex items-center justify-center font-bold text-xs tracking-tight">
+          HUB
+        </div>
+        <div>
+          <div class="text-xs font-bold text-[#1D1D1F] flex items-center gap-2">
+            <span>Bộ 3 Trang Infographic • Phong Cách Trang Web Apple</span>
+            <span class="px-2 py-0.5 text-[10px] font-semibold bg-[#A50064]/10 text-[#A50064] rounded-full">Cam Shopee • Đen TikTok • Tím MoMo</span>
+          </div>
+          <p class="text-[11px] text-[#6E6E73]">Tải từng trang hoặc tải trọn bộ 3 ảnh PNG độ phân giải 3x (3360px)</p>
+        </div>
+      </div>
+
+      <!-- Page Quick Export Buttons -->
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="exportSinglePage('page-1', 'Trang_1_Ly_Thuyet_Va_Bo_Ba_BNPL.png')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#F5F5F7] hover:bg-[#E8E8ED] text-[#1D1D1F] border border-black/10 transition">
+          Tải Trang 1
+        </button>
+        <button onclick="exportSinglePage('page-2', 'Trang_2_Lai_Suat_Thực_Va_Cu_Soc_Thang_T.png')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#F5F5F7] hover:bg-[#E8E8ED] text-[#1D1D1F] border border-black/10 transition">
+          Tải Trang 2
+        </button>
+        <button onclick="exportSinglePage('page-3', 'Trang_3_Lo_Trinh_Phuc_Hoi_Va_3_Quy_Tac.png')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#F5F5F7] hover:bg-[#E8E8ED] text-[#1D1D1F] border border-black/10 transition">
+          Tải Trang 3
+        </button>
+
+        <button onclick="exportAllThreePages()" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-[#A50064] hover:bg-[#880052] text-white shadow-sm transition flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Tải Trọn Bộ 3 Ảnh PNG (3x)</span>
+        </button>
+
+        <button onclick="toggleDrawer('customDrawer')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#F5F5F7] hover:bg-[#E8E8ED] text-[#1D1D1F] border border-black/10 transition">
+          Tùy chỉnh Logo / Nhóm
+        </button>
+      </div>
+    </div>
+
+    <!-- Optional Drawer to upload raw logo files or edit group name -->
+    <div id="customDrawer" class="hidden max-w-[1120px] mx-auto mt-3 pt-3 border-t border-black/10 text-xs">
+      <div class="bg-[#F5F5F7] p-3.5 rounded-2xl grid grid-cols-12 gap-4 items-center">
+        <div class="col-span-5 space-y-1">
+          <div class="font-semibold text-[#1D1D1F]">Điền tên nhóm / lớp (mặc định giữ nguyên theo file Word):</div>
+          <div class="flex gap-2">
+            <input id="groupInput" type="text" placeholder="Nhóm tác giả • Học phần Tài chính cá nhân (HUB)" class="flex-1 px-3 py-1.5 rounded-lg bg-white border border-black/15 text-[#1D1D1F] text-xs focus:outline-none" oninput="updateGroupText(this.value)" />
+            <button onclick="resetGroupText()" class="px-2.5 py-1.5 rounded-lg bg-white border border-black/15 text-[#1D1D1F] font-medium">Mặc định</button>
+          </div>
+        </div>
+        <div class="col-span-7 space-y-1">
+          <div class="font-semibold text-[#1D1D1F]">Đổi trực tiếp file ảnh Logo từ máy tính (nếu muốn thay bản dựng sẵn):</div>
+          <div class="grid grid-cols-3 gap-2">
+            <label class="cursor-pointer bg-white hover:bg-zinc-50 border border-black/15 rounded-lg px-3 py-1.5 flex items-center justify-between">
+              <span class="font-semibold text-[#F05123]">Ảnh SPayLater</span>
+              <input type="file" accept="image/*" class="hidden" onchange="swapLogoFile(event, 'spaylater')" />
+            </label>
+            <label class="cursor-pointer bg-white hover:bg-zinc-50 border border-black/15 rounded-lg px-3 py-1.5 flex items-center justify-between">
+              <span class="font-semibold text-[#1D1D1F]">Ảnh TikTok Shop</span>
+              <input type="file" accept="image/*" class="hidden" onchange="swapLogoFile(event, 'tiktok')" />
+            </label>
+            <label class="cursor-pointer bg-white hover:bg-zinc-50 border border-black/15 rounded-lg px-3 py-1.5 flex items-center justify-between">
+              <span class="font-semibold text-[#A50064]">Ảnh MoMo</span>
+              <input type="file" accept="image/*" class="hidden" onchange="swapLogoFile(event, 'momo')" />
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- REUSABLE EXACT VECTOR LOGOS FROM USER'S UPLOADED IMAGES 3, 4, 5 -->
+  <svg class="hidden" aria-hidden="true">
+    <!-- SPayLater Logo -->
+    <symbol id="logo-spaylater" viewBox="0 0 240 240">
+      <rect width="240" height="240" rx="36" fill="#F05123"/>
+      <path d="M88 76 C88 53, 152 53, 152 76" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+      <path d="M68 76 H172 L165 152 C164 159, 159 164, 152 164 H88 C81 164, 76 159, 75 152 Z" fill="#FFFFFF"/>
+      <path d="M135 99 C130 92, 106 91, 104 104 C102 117, 139 117, 137 134 C135 148, 107 147, 101 138" fill="none" stroke="#F05123" stroke-width="8" stroke-linecap="round"/>
+      <rect x="20" y="176" width="200" height="44" rx="8" fill="#DF4116"/>
+      <rect x="37" y="191" width="24" height="18" rx="3" fill="#FFFFFF"/>
+      <path d="M41 191 L56 187 L58 191 Z" fill="#FFFFFF"/>
+      <circle cx="57" cy="200" r="2" fill="#DF4116"/>
+      <circle cx="36" cy="191" r="8" fill="#FFFFFF" stroke="#DF4116" stroke-width="1.5"/>
+      <path d="M36 187 V191 H40" fill="none" stroke="#DF4116" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="68" y="206" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="25" letter-spacing="-0.5">SPayLater</text>
+    </symbol>
+
+    <!-- TikTok Shop Logo -->
+    <symbol id="logo-tiktok" viewBox="0 0 240 240">
+      <rect width="240" height="240" rx="36" fill="#FFFFFF"/>
+      <path d="M90 54 C90 24, 150 24, 150 54" fill="none" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
+      <path d="M58 68 C58 56, 66 48, 78 48 H162 C174 48, 182 56, 182 68 L192 154 C193 166, 184 176, 172 176 H68 C56 176, 47 166, 48 154 Z" fill="#000000"/>
+      <circle cx="93" cy="65" r="9.5" fill="#FFFFFF"/>
+      <circle cx="147" cy="65" r="9.5" fill="#FFFFFF"/>
+      <path d="M126 83 H141 C142 96, 151 104, 163 105 V120 C153 120, 145 116, 141 111 V138 C141 155, 127 167, 110 167 C94 167, 82 155, 82 138 C82 121, 95 109, 112 109 V124 C103 124, 97 130, 97 138 C97 146, 103 152, 111 152 C119 152, 126 146, 126 138 Z" fill="#25F4EE" transform="translate(-4, -3)"/>
+      <path d="M126 83 H141 C142 96, 151 104, 163 105 V120 C153 120, 145 116, 141 111 V138 C141 155, 127 167, 110 167 C94 167, 82 155, 82 138 C82 121, 95 109, 112 109 V124 C103 124, 97 130, 97 138 C97 146, 103 152, 111 152 C119 152, 126 146, 126 138 Z" fill="#FE2C55" transform="translate(4, 3)"/>
+      <path d="M126 83 H141 C142 96, 151 104, 163 105 V120 C153 120, 145 116, 141 111 V138 C141 155, 127 167, 110 167 C94 167, 82 155, 82 138 C82 121, 95 109, 112 109 V124 C103 124, 97 130, 97 138 C97 146, 103 152, 111 152 C119 152, 126 146, 126 138 Z" fill="#FFFFFF"/>
+      <text x="16" y="218" fill="#000000" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="34" letter-spacing="-1">TikTok</text>
+      <text x="135" y="218" fill="#000000" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="33" letter-spacing="-0.8">Shop</text>
+    </symbol>
+
+    <!-- MoMo Logo -->
+    <symbol id="logo-momo" viewBox="0 0 240 240">
+      <rect width="240" height="240" rx="38" fill="#A50064"/>
+      <path d="M38 112 V72 C38 55, 51 44, 65 44 C74 44, 80 48, 84 54 C88 48, 94 44, 103 44 C117 44, 130 55, 130 72 V112 H108 V74 C108 67, 104 63, 99 63 C94 63, 90 67, 90 74 V112 H78 V74 C78 67, 74 63, 69 63 C64 63, 60 67, 60 74 V112 Z" fill="#FFFFFF"/>
+      <circle cx="174" cy="78" r="34" fill="#FFFFFF"/>
+      <circle cx="174" cy="78" r="14" fill="#A50064"/>
+      <path d="M38 196 V156 C38 139, 51 128, 65 128 C74 128, 80 132, 84 138 C88 132, 94 128, 103 128 C117 128, 130 139, 130 156 V196 H108 V158 C108 151, 104 147, 99 147 C94 147, 90 151, 90 158 V196 H78 V158 C78 151, 74 147, 69 147 C64 147, 60 151, 60 158 V196 Z" fill="#FFFFFF"/>
+      <circle cx="174" cy="162" r="34" fill="#FFFFFF"/>
+      <circle cx="174" cy="162" r="14" fill="#A50064"/>
+    </symbol>
+  </svg>
+
+  <!-- EXPORT TOAST -->
+  <div id="exportToast" class="no-print fixed bottom-6 right-6 z-50 hidden bg-[#1D1D1F] text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3">
+    <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+    <span id="exportToastMsg" class="text-xs font-semibold">Đang xuất ảnh PNG Ultra-HD (3x)...</span>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN WORKSPACE: 3 APPLE-STYLE EDITORIAL PAGES                         -->
+  <!-- ===================================================================== -->
+  <main class="max-w-[1160px] mx-auto px-4 pt-8 space-y-14">
+
+    <!-- =================================================================== -->
+    <!-- TRANG 1: LÝ THUYẾT 80/20 & GIẢI PHẪU BỘ BA BNPL (IMAGE 1, 2, 6)     -->
+    <!-- =================================================================== -->
+    <article id="page-1" class="apple-page-sheet">
+
+      <!-- Top Dark Nav Bar (Inspired by Image 5 & 6) -->
+      <div class="apple-top-nav">
+        <div class="flex items-center gap-6">
+          <span class="font-bold text-white tracking-tight">HUB • Trường Đại học Ngân hàng TP.HCM</span>
+          <span class="text-zinc-400">Học phần Tài chính cá nhân</span>
+        </div>
+        <div class="flex items-center gap-5 text-zinc-300">
+          <span class="group-label-target">Nhóm tác giả • Lý thuyết: Kapoor và cs. (2016) &amp; Lê Hoài Ân (2025)</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-white/15 text-white text-[11px] font-semibold">Tháng 10/2026</span>
+        </div>
+      </div>
+
+      <!-- Sub-Header Bar (Inspired by Image 2, 5, 6) -->
+      <div class="apple-sub-nav">
+        <div class="text-lg font-bold tracking-tight text-[#1D1D1F]">
+          Giải Phẫu Tín Dụng Số BNPL &amp; Ngân Sách 50/30/20 – Sáu Chiếc Lọ
+        </div>
+        <div class="flex items-center gap-4 text-xs text-[#6E6E73]">
+          <span class="font-semibold text-[#1D1D1F]">Trang 01 / 03</span>
+          <span>•</span>
+          <span>Cơ sở lý thuyết &amp; Bản chất bộ ba BNPL</span>
+        </div>
+      </div>
+
+      <!-- HERO SECTION (Inspired by Image 1 "Say hello to iMac.") -->
+      <div class="px-14 pt-12 pb-12 text-center border-b border-[#D2D2D7]">
+        <!-- 3 Brand Lineup Visual (Like the colorful iMac lineup in Image 1) -->
+        <div class="max-w-[780px] mx-auto grid grid-cols-3 gap-6 mb-9">
+          <!-- SPayLater -->
+          <div class="apple-card-gray p-5 flex flex-col items-center justify-center transition">
+            <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-sm border border-black/5 bg-white mb-3">
+              <svg class="brand-logo-svg-spaylater w-full h-full"><use href="#logo-spaylater"/></svg>
+              <img class="brand-logo-img-spaylater hidden w-full h-full object-cover" alt="SPayLater" />
+            </div>
+            <div class="text-sm font-bold text-[#1D1D1F]">SPayLater (Shopee)</div>
+            <div class="text-xs font-semibold text-[#F05123] mt-0.5">Hạn mức tối đa 50 triệu đ</div>
+            <div class="text-[11px] text-[#6E6E73] mt-0.5">TPBank &amp; đối tác cấp</div>
+          </div>
+
+          <!-- TikTok PayLater -->
+          <div class="apple-card-gray p-5 flex flex-col items-center justify-center transition">
+            <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-sm border border-black/5 bg-white mb-3">
+              <svg class="brand-logo-svg-tiktok w-full h-full"><use href="#logo-tiktok"/></svg>
+              <img class="brand-logo-img-tiktok hidden w-full h-full object-contain" alt="TikTok Shop" />
+            </div>
+            <div class="text-sm font-bold text-[#1D1D1F]">TikTok PayLater</div>
+            <div class="text-xs font-semibold text-[#1D1D1F] mt-0.5">Hạn mức 1 – 30 triệu đ</div>
+            <div class="text-[11px] text-[#6E6E73] mt-0.5">VietCredit cấp</div>
+          </div>
+
+          <!-- Ví Trả Sau MoMo -->
+          <div class="apple-card-gray p-5 flex flex-col items-center justify-center transition">
+            <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-sm border border-black/5 bg-white mb-3">
+              <svg class="brand-logo-svg-momo w-full h-full"><use href="#logo-momo"/></svg>
+              <img class="brand-logo-img-momo hidden w-full h-full object-cover" alt="MoMo" />
+            </div>
+            <div class="text-sm font-bold text-[#1D1D1F]">Ví Trả Sau MoMo</div>
+            <div class="text-xs font-semibold text-[#A50064] mt-0.5">Hạn mức 1 – 20 triệu đ</div>
+            <div class="text-[11px] text-[#6E6E73] mt-0.5">TPBank, MBV, VCBNeo</div>
+          </div>
+        </div>
+
+        <!-- Giant Apple Headline & Subtitle -->
+        <h1 class="apple-display-hero text-[44px] max-w-[820px] mx-auto">
+          Giải phẫu bẫy “Trả góp 0% lãi suất”.
+        </h1>
+        <p class="apple-body-copy max-w-[690px] mx-auto mt-3 text-[15.5px]">
+          Là <strong class="text-[#1D1D1F] font-semibold">tín dụng tiêu dùng số lai ghép</strong> (vừa có hạn mức quay vòng của tín dụng mở, vừa tách từng đơn thành hợp đồng trả góp cố định của tín dụng đóng), BNPL gần thẻ tín dụng hơn ví điện tử và ẩn chi phí vốn thực gấp <strong class="text-[#1D1D1F] font-semibold">8 đến 11 lần</strong> lãi tiết kiệm.
+        </p>
+
+        <!-- 3 Giant Stats Row (Image 1 "11.3 million pixels / 500 nits" style) -->
+        <div class="max-w-[820px] mx-auto grid grid-cols-3 gap-8 mt-9 pt-8 border-t border-[#D2D2D7]/80">
+          <div>
+            <div class="apple-stat-giant text-[38px] text-[#1D1D1F]">~45%/năm</div>
+            <div class="text-xs font-semibold text-[#1D1D1F] mt-1">Tốc độ tăng trưởng BNPL Việt Nam</div>
+            <div class="text-[11.5px] text-[#6E6E73]">Dự báo giai đoạn 2022–2028</div>
+          </div>
+          <div>
+            <div class="apple-stat-giant text-[38px] text-[#F05123]">p = 0,771</div>
+            <div class="text-xs font-semibold text-[#1D1D1F] mt-1">Rủi ro cảm nhận không cản ý định</div>
+            <div class="text-[11.5px] text-[#6E6E73]">Flash sale kích thích mạnh (β = 0,226; 260 Gen Z)</div>
+          </div>
+          <div>
+            <div class="apple-stat-giant text-[38px] text-[#A50064]">79,61%/năm</div>
+            <div class="text-xs font-semibold text-[#1D1D1F] mt-1">Lãi suất hiệu dụng năm (EAR) tối đa</div>
+            <div class="text-[11.5px] text-[#6E6E73]">APR thực từ 52,35% đến 60,01%/năm</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 1.1: QUY LUẬT BẤT BIẾN 80/20 & 4 TỶ SỐ (Inspired by Image 1 Split Layout) -->
+      <div class="px-14 py-11 border-b border-[#D2D2D7] grid grid-cols-12 gap-10 items-center">
+        <!-- Left 5 Cols: Editorial Copy -->
+        <div class="col-span-5 space-y-3">
+          <div class="apple-eyebrow text-[#F05123]">Chương 1 • Khung lý thuyết tích hợp</div>
+          <h2 class="apple-section-title text-[30px] text-[#1D1D1F]">
+            Quy luật “Bất biến 80/20” và 4 tỷ số sức khỏe.
+          </h2>
+          <p class="apple-body-copy">
+            Mô hình <strong class="text-[#1D1D1F]">50/30/20</strong> (Warren &amp; Tyagi, 2005) và <strong class="text-[#1D1D1F]">Sáu chiếc lọ</strong> (Eker, 2005) cùng được neo vào <strong class="text-[#1D1D1F]">Quỹ dự phòng = 3–6 tháng chi sinh hoạt</strong>.
+          </p>
+          <div class="pt-2 space-y-2 text-[13px] text-[#6E6E73] leading-relaxed">
+            <div class="flex items-start gap-2">
+              <span class="text-[#F05123] font-bold">✓</span>
+              <span><strong class="text-[#1D1D1F]">Chống tính trùng (Double Counting):</strong> Trả sau 1 kỳ miễn phí được <em>trích khóa ngay lúc mua</em>; trả góp nhiều kỳ được <em>trừ vào lọ PLAY của từng tháng đến hạn</em> theo đúng số tiền trả mỗi kỳ (<span class="font-semibold text-[#1D1D1F]">PMT</span>).</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-[#A50064] font-bold">✓</span>
+              <span><strong class="text-[#1D1D1F]">Báo cáo tài chính:</strong> <span class="font-medium text-[#1D1D1F]">Net Worth = Assets – Liabilities</span> (hàng tiêu dùng nhanh giá trị thanh lý = 0); <span class="font-medium text-[#1D1D1F]">Variance = Kế hoạch – Thực tế</span>.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 7 Cols: Clean Bento Visual (Like Image 1 Right Grid) -->
+        <div class="col-span-7 space-y-3.5">
+          <!-- 80/20 Visual Bar Card -->
+          <div class="apple-card-gray p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#6E6E73]">Bảng 1.1 • Ma trận khớp nối thu nhập thực nhận</span>
+              <span class="apple-pill-badge-dark">80% Đời sống • 20% Tương lai</span>
+            </div>
+
+            <!-- Segmented Visual Bar (TikTok Black / Shopee Orange / MoMo Purple) -->
+            <div class="h-10 rounded-2xl overflow-hidden flex text-xs font-bold text-white shadow-inner">
+              <div style="width: 50%;" class="bg-[#1D1D1F] flex items-center justify-center">50% Thiết yếu cứng (NEC)</div>
+              <div style="width: 30%;" class="bg-[#F05123] flex items-center justify-center border-l border-white/30">30% Cá nhân</div>
+              <div style="width: 20%;" class="bg-[#A50064] flex items-center justify-center border-l border-white/30">20% Tích lũy</div>
+            </div>
+
+            <!-- 3 Breakdown Mini Columns -->
+            <div class="grid grid-cols-3 gap-3 text-xs pt-1">
+              <div class="bg-white p-3.5 rounded-xl border border-black/5">
+                <div class="font-bold text-[#1D1D1F]">50% Thiết yếu (Needs)</div>
+                <div class="text-[#1D1D1F] font-semibold mt-0.5">50% NEC cứng</div>
+                <div class="text-[11px] text-[#6E6E73] mt-0.5">Ăn, ở, đi lại, học tập cơ bản</div>
+              </div>
+              <div class="bg-white p-3.5 rounded-xl border border-black/5">
+                <div class="font-bold text-[#F05123]">30% Cá nhân (Wants)</div>
+                <div class="text-[#1D1D1F] font-semibold mt-0.5">5% đệm NEC + EDU + PLAY + GIVE</div>
+                <div class="text-[11px] text-[#6E6E73] mt-0.5">EDU 10% • PLAY 10% • GIVE 5%</div>
+              </div>
+              <div class="bg-white p-3.5 rounded-xl border border-black/5">
+                <div class="font-bold text-[#A50064]">20% Mục tiêu tài chính</div>
+                <div class="text-[#1D1D1F] font-semibold mt-0.5">LTS 10% + FFA 10%</div>
+                <div class="text-[11px] text-[#6E6E73] mt-0.5">Quỹ dự phòng, tiết kiệm, đầu tư</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 Ratios Strip (Bảng 1.2) -->
+          <div class="apple-card-gray px-6 py-4 grid grid-cols-4 gap-4 text-center">
+            <div>
+              <div class="text-[11px] font-semibold text-[#6E6E73]">1. DPR (Chi trả nợ)</div>
+              <div class="apple-stat-giant text-xl text-[#1D1D1F] mt-0.5">&lt; 20%</div>
+              <div class="text-[10.5px] text-[#6E6E73]">Trả nợ tháng / Thu nhập</div>
+            </div>
+            <div>
+              <div class="text-[11px] font-semibold text-[#6E6E73]">2. Savings Ratio</div>
+              <div class="apple-stat-giant text-xl text-[#A50064] mt-0.5">≥ 10% (20%)</div>
+              <div class="text-[10.5px] text-[#6E6E73]">Tiết kiệm / Tổng thu nhập</div>
+            </div>
+            <div>
+              <div class="text-[11px] font-semibold text-[#6E6E73]">3. Liquidity Ratio</div>
+              <div class="apple-stat-giant text-xl text-[#F05123] mt-0.5">3–6 tháng</div>
+              <div class="text-[10.5px] text-[#6E6E73]">TS thanh khoản / Chi tháng</div>
+            </div>
+            <div>
+              <div class="text-[11px] font-semibold text-[#6E6E73]">4. Debt Ratio</div>
+              <div class="apple-stat-giant text-xl text-[#1D1D1F] mt-0.5">Thấp nhất</div>
+              <div class="text-[10.5px] text-[#6E6E73]">Tổng nợ / Net Worth</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 1.2: BẢNG 2.1 - 3-COLUMN HAIRLINE PRODUCT SHOWCASE (Inspired by Image 2 "Refurbished Mac") -->
+      <div class="px-14 py-10">
+        <div class="flex items-end justify-between mb-7">
+          <div>
+            <div class="apple-eyebrow text-[#A50064]">Chương 2 • Bảng 2.1</div>
+            <h2 class="apple-section-title text-[26px] text-[#1D1D1F] mt-0.5">
+              Giải phẫu cơ chế vận hành của bộ ba BNPL tại Việt Nam.
+            </h2>
+          </div>
+          <span class="text-xs text-[#6E6E73]">Đặt cạnh nhau theo 5 tiêu chí lý thuyết môn học</span>
+        </div>
+
+        <!-- 3 Hairline Columns (Image 2 Style) -->
+        <div class="grid grid-cols-3 apple-hairline-cols border-t border-b border-[#D2D2D7]">
+
+          <!-- Column 1: SPayLater -->
+          <div class="py-7 pr-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3.5 mb-5">
+                <div class="w-12 h-12 rounded-xl overflow-hidden shadow-sm border border-black/10 shrink-0 bg-white">
+                  <svg class="brand-logo-svg-spaylater w-full h-full"><use href="#logo-spaylater"/></svg>
+                  <img class="brand-logo-img-spaylater hidden w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-[#1D1D1F]">SPayLater (Shopee)</h3>
+                  <p class="text-xs text-[#6E6E73]">Tín dụng lai ghép • Chia 1, 2, 3, 6, 12 kỳ</p>
+                </div>
+              </div>
+
+              <div class="space-y-2.5 text-[13px] leading-relaxed">
+                <div><strong class="text-[#1D1D1F]">• Lọ bị tấn công:</strong> Lọ <strong class="text-[#F05123]">PLAY / nhóm 30%</strong> (công nghệ, thời trang).</div>
+                <div><strong class="text-[#1D1D1F]">• Cơ chế tâm lý:</strong> Chia nhỏ con số trả mỗi kỳ cạnh nút mua, làm mờ tổng gốc và phí.</div>
+                <div><strong class="text-[#1D1D1F]">• Finance charge:</strong> Lãi 0%; phí chuyển đổi <strong class="text-[#1D1D1F]">0 – 2,95%/tháng</strong> tùy kỳ hạn.</div>
+                <div><strong class="text-[#1D1D1F]">• Phí trễ hạn &amp; CIC:</strong> <strong class="text-[#F05123]">30.000 đ/kỳ</strong> (= 4,25% khoản trả 706.200 đ); cập nhật lên <strong>CIC</strong>.</div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-[#D2D2D7]/60 flex items-center justify-between">
+              <span class="apple-pill-badge">APR thực: 52,35%–60,01%</span>
+              <span class="text-xs font-bold text-[#F05123]">EAR tới 79,61%</span>
+            </div>
+          </div>
+
+          <!-- Column 2: TikTok PayLater -->
+          <div class="py-7 px-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3.5 mb-5">
+                <div class="w-12 h-12 rounded-xl overflow-hidden shadow-sm border border-black/10 shrink-0 bg-white">
+                  <svg class="brand-logo-svg-tiktok w-full h-full"><use href="#logo-tiktok"/></svg>
+                  <img class="brand-logo-img-tiktok hidden w-full h-full object-contain" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-[#1D1D1F]">TikTok PayLater</h3>
+                  <p class="text-xs text-[#6E6E73]">Tín dụng lai ghép • Hoãn trả / 1, 3, 6, 9, 12 kỳ</p>
+                </div>
+              </div>
+
+              <div class="space-y-2.5 text-[13px] leading-relaxed">
+                <div><strong class="text-[#1D1D1F]">• Lọ bị tấn công:</strong> Gần như toàn bộ lọ <strong class="text-[#1D1D1F] underline">PLAY</strong> (mua qua livestream).</div>
+                <div><strong class="text-[#1D1D1F]">• Cơ chế tâm lý:</strong> Kích hoạt <em>Impulse Buying</em> (chốt đơn bốc đồng khi đếm ngược).</div>
+                <div><strong class="text-[#1D1D1F]">• Finance charge:</strong> Hoãn trả tháng sau 0% phí; trả góp phí <strong class="text-[#1D1D1F]">2,95%/kỳ</strong>.</div>
+                <div><strong class="text-[#1D1D1F]">• Phí trễ hạn &amp; CIC:</strong> <strong class="text-[#1D1D1F]">30.000 đ/kỳ</strong> (= 5,51% khoản trả 544.250 đ); báo cáo <strong>CIC</strong>.</div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-[#D2D2D7]/60 flex items-center justify-between">
+              <span class="apple-pill-badge">APR thực (3 kỳ): 52,35%</span>
+              <span class="text-xs font-bold text-[#1D1D1F]">EAR: 66,94%</span>
+            </div>
+          </div>
+
+          <!-- Column 3: Ví Trả Sau MoMo -->
+          <div class="py-7 pl-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3.5 mb-5">
+                <div class="w-12 h-12 rounded-xl overflow-hidden shadow-sm border border-black/10 shrink-0 bg-white">
+                  <svg class="brand-logo-svg-momo w-full h-full"><use href="#logo-momo"/></svg>
+                  <img class="brand-logo-img-momo hidden w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-[#1D1D1F]">Ví Trả Sau MoMo</h3>
+                  <p class="text-xs text-[#6E6E73]">Thiên về tín dụng mở • Miễn lãi đến 45 ngày</p>
+                </div>
+              </div>
+
+              <div class="space-y-2.5 text-[13px] leading-relaxed">
+                <div><strong class="text-[#1D1D1F]">• Lọ bị tấn công:</strong> Lọ <strong class="text-[#A50064]">NEC</strong> (hóa đơn) và <strong class="text-[#A50064]">PLAY</strong> (ăn ngoài, xem phim).</div>
+                <div><strong class="text-[#1D1D1F]">• Cơ chế tâm lý:</strong> Tạo ảo giác “đệm thanh khoản” vào cuối tháng.</div>
+                <div><strong class="text-[#1D1D1F]">• Finance charge:</strong> Phí dịch vụ <strong class="text-[#1D1D1F]">33.000 đ/tháng</strong> từ GD thứ 6; trả góp <strong class="text-[#1D1D1F]">3%/tháng</strong>.</div>
+                <div><strong class="text-[#1D1D1F]">• Phí trễ hạn &amp; CIC:</strong> Phạt <strong class="text-[#A50064]">5,25%–21%</strong> số tiền chậm trả; báo cáo <strong>CIC</strong>.</div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-[#D2D2D7]/60 flex items-center justify-between">
+              <span class="apple-pill-badge">APR thực (6 kỳ): 59,33%</span>
+              <span class="text-xs font-bold text-[#A50064]">EAR: 78,45%</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- =================================================================== -->
+    <!-- TRANG 2: DARK MODE 3 TẦNG LÃI SUẤT & CÚ SỐC THÁNG T (CASE STUDY)    -->
+    <!-- =================================================================== -->
+    <article id="page-2" class="apple-page-sheet">
+
+      <!-- Top Dark Nav Bar -->
+      <div class="apple-top-nav">
+        <div class="flex items-center gap-6">
+          <span class="font-bold text-white tracking-tight">HUB • Trường Đại học Ngân hàng TP.HCM</span>
+          <span class="text-zinc-400">Học phần Tài chính cá nhân</span>
+        </div>
+        <div class="flex items-center gap-5 text-zinc-300">
+          <span class="group-label-target">Nhóm tác giả • Lý thuyết: Kapoor và cs. (2016) &amp; Lê Hoài Ân (2025)</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-white/15 text-white text-[11px] font-semibold">Tháng 10/2026</span>
+        </div>
+      </div>
+
+      <!-- Sub-Header Bar -->
+      <div class="apple-sub-nav">
+        <div class="text-lg font-bold tracking-tight text-[#1D1D1F]">
+          Định Lượng Lãi Suất Thực (APR, EAR) &amp; Cú Sốc Sao Kê Tháng T
+        </div>
+        <div class="flex items-center gap-4 text-xs text-[#6E6E73]">
+          <span class="font-semibold text-[#1D1D1F]">Trang 02 / 03</span>
+          <span>•</span>
+          <span>Mục 2.1.2, 2.1.3, 2.2 &amp; Mô phỏng sinh viên N.V.A (Mục 2.3)</span>
+        </div>
+      </div>
+
+      <!-- DARK SPOTLIGHT SECTION: 3 TIERS OF INTEREST & CIC LAW (User requested dark highlight) -->
+      <div class="px-10 pt-9 pb-4">
+        <div class="apple-card-dark p-10 space-y-8 shadow-xl">
+
+          <!-- Top Header & 3 Formulas -->
+          <div class="grid grid-cols-12 gap-8 items-center border-b border-white/15 pb-7">
+            <div class="col-span-5 space-y-2">
+              <div class="apple-eyebrow text-[#F05123]">Mục 1.2.3, 2.1.2 &amp; Phụ lục 1</div>
+              <h2 class="apple-section-title text-[28px] text-white">
+                Giải mã 3 tầng lãi suất ẩn sau phí phẳng.
+              </h2>
+              <p class="text-[13.5px] text-zinc-300 leading-relaxed">
+                Phí phẳng (<span class="text-[#F05123] font-semibold">r_flat</span>) tính trên <strong class="text-white">nợ gốc ban đầu</strong> trong khi dư nợ giảm dần mỗi tháng (<span class="text-zinc-200">PMT = P/n + P × r_flat</span>). Kỳ hạn càng dài, lãi suất thực càng đắt đỏ.
+              </p>
+            </div>
+
+            <!-- 3 Formula Cards (TikTok Dark / Shopee Orange / MoMo Purple) -->
+            <div class="col-span-7 grid grid-cols-3 gap-3.5">
+              <div class="bg-white/5 border border-white/15 rounded-2xl p-4">
+                <div class="text-[11px] font-semibold text-zinc-300">Tầng 1 • Lãi phẳng năm</div>
+                <div class="text-lg font-extrabold text-white mt-1">APR_flat = 12·r_flat</div>
+                <div class="text-xl font-extrabold text-white mt-2">35,4% – 36,0%</div>
+                <div class="text-[11px] text-zinc-400 mt-1">Đánh giá thấp vì bỏ qua dư nợ giảm dần.</div>
+              </div>
+
+              <div class="bg-[#F05123]/20 border border-[#F05123]/50 rounded-2xl p-4">
+                <div class="text-[11px] font-semibold text-[#F05123]">Tầng 2 • Niên kim (TVM)</div>
+                <div class="text-lg font-extrabold text-white mt-1">APR_thực = 12·i</div>
+                <div class="text-xl font-extrabold text-[#F05123] mt-2">52,35% – 60,01%</div>
+                <div class="text-[11px] text-zinc-300 mt-1">Giải từ: P = PMT·[1−(1+i)^−n]/i</div>
+              </div>
+
+              <div class="bg-[#A50064]/30 border border-[#A50064] rounded-2xl p-4">
+                <div class="text-[11px] font-semibold text-white">Tầng 3 • Lãi kép năm</div>
+                <div class="text-lg font-extrabold text-white mt-1">EAR = (1+i)^12 − 1</div>
+                <div class="text-xl font-extrabold text-white mt-2">66,94% – 79,61%</div>
+                <div class="text-[11px] text-zinc-200 mt-1">Cao gấp 8–11 lần lãi tiết kiệm (6–7%).</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 Brand Calculation Showcase Cards (Replacing Appendix 1 Table with Visual Cards) -->
+          <div class="grid grid-cols-3 gap-5">
+            <!-- TikTok 3 kỳ -->
+            <div class="bg-white/5 border border-white/15 rounded-2xl p-5 flex flex-col justify-between">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl overflow-hidden bg-white shrink-0">
+                  <svg class="brand-logo-svg-tiktok w-full h-full"><use href="#logo-tiktok"/></svg>
+                  <img class="brand-logo-img-tiktok hidden w-full h-full object-contain" />
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-white">TikTok PayLater • 3 kỳ</div>
+                  <div class="text-xs text-zinc-400">Gốc 1.500.000 đ • Phí 2,95%/kỳ</div>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-3 pt-3 border-t border-white/10">
+                <div>
+                  <div class="text-[11px] text-zinc-400">APR thực (i = 4,363%)</div>
+                  <div class="apple-stat-giant text-2xl text-white mt-0.5">52,35%</div>
+                </div>
+                <div>
+                  <div class="text-[11px] text-zinc-400">Lãi hiệu dụng EAR</div>
+                  <div class="apple-stat-giant text-2xl text-[#F05123] mt-0.5">66,94%</div>
+                </div>
+              </div>
+              <div class="text-[11.5px] text-zinc-300 mt-3">PMT: <strong class="text-white">544.250 đ/kỳ</strong> • Tổng phí: <strong class="text-white">132.750 đ</strong></div>
+            </div>
+
+            <!-- SPayLater 6 kỳ & 12 kỳ -->
+            <div class="bg-[#F05123]/15 border border-[#F05123]/50 rounded-2xl p-5 flex flex-col justify-between">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl overflow-hidden bg-white shrink-0">
+                  <svg class="brand-logo-svg-spaylater w-full h-full"><use href="#logo-spaylater"/></svg>
+                  <img class="brand-logo-img-spaylater hidden w-full h-full object-cover" />
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-white">SPayLater • 6 kỳ (và 12 kỳ)</div>
+                  <div class="text-xs text-zinc-300">Gốc 3.600.000 đ • Phí 2,95%/tháng</div>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-3 pt-3 border-t border-white/15">
+                <div>
+                  <div class="text-[11px] text-zinc-300">APR thực 6 kỳ (i = 4,865%)</div>
+                  <div class="apple-stat-giant text-2xl text-white mt-0.5">58,38%</div>
+                </div>
+                <div>
+                  <div class="text-[11px] text-zinc-300">Lãi hiệu dụng EAR (6 kỳ)</div>
+                  <div class="apple-stat-giant text-2xl text-[#F05123] mt-0.5">76,83%</div>
+                </div>
+              </div>
+              <div class="text-[11.5px] text-zinc-200 mt-3">PMT 6 kỳ: <strong class="text-white">706.200 đ</strong> (Phí 637.200 đ) • 12 kỳ: <strong class="text-[#F05123]">EAR 79,61%</strong></div>
+            </div>
+
+            <!-- MoMo 6 kỳ -->
+            <div class="bg-[#A50064]/25 border border-[#A50064] rounded-2xl p-5 flex flex-col justify-between">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl overflow-hidden bg-white shrink-0">
+                  <svg class="brand-logo-svg-momo w-full h-full"><use href="#logo-momo"/></svg>
+                  <img class="brand-logo-img-momo hidden w-full h-full object-cover" />
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-white">Ví Trả Sau MoMo • 6 kỳ</div>
+                  <div class="text-xs text-zinc-300">Gốc 3.600.000 đ • Phí 3,00%/tháng</div>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-3 pt-3 border-t border-white/15">
+                <div>
+                  <div class="text-[11px] text-zinc-300">APR thực 6 kỳ</div>
+                  <div class="apple-stat-giant text-2xl text-white mt-0.5">59,33%</div>
+                </div>
+                <div>
+                  <div class="text-[11px] text-zinc-300">Lãi hiệu dụng EAR</div>
+                  <div class="apple-stat-giant text-2xl text-white mt-0.5">78,45%</div>
+                </div>
+              </div>
+              <div class="text-[11.5px] text-zinc-200 mt-3">PMT: <strong class="text-white">708.000 đ/kỳ</strong> • Phạt trễ 15 ngày đơn 1,233tr: <strong class="text-white underline">258.930 đ (21%)</strong></div>
+            </div>
+          </div>
+
+          <!-- CIC Legal Footer Strip inside Dark Card -->
+          <div class="bg-white/5 rounded-2xl px-5 py-3.5 border border-white/10 flex items-center justify-between gap-4 text-xs">
+            <div class="text-zinc-300">
+              <strong class="text-white">Hệ lụy pháp lý CIC (Mục 2.1.3):</strong> Dư nợ tại TPBank, MBV, VCBNeo, VietCredit báo cáo lên CIC (TT 15/2023 &amp; <strong class="text-white">TT 46/2026/TT-NHNN</strong> hiệu lực 01/11/2026). Theo Khoản 1 Điều 10 <strong class="text-white">TT 31/2024 &amp; TT 37/2025/TT-NHNN</strong>:
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="px-3 py-1 rounded-full bg-[#F05123] text-white font-bold">10–90 ngày (hoặc &lt;10 ngày suy giảm thu hồi): Nhóm 2</span>
+              <span class="px-3 py-1 rounded-full bg-[#A50064] text-white font-bold">&gt; 90 ngày: Nhóm 3+ (Nợ xấu)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECTION 2.2: CASE STUDY SINH VIÊN N.V.A - GIANT STATS + MINIMALIST CHART -->
+      <div class="px-14 py-9 grid grid-cols-12 gap-10 items-center">
+
+        <!-- Left 5 Cols: Profile + 3 BNPL Transactions -->
+        <div class="col-span-5 space-y-4">
+          <div>
+            <div class="apple-eyebrow text-[#A50064]">Mục 2.2 &amp; 2.3 • Mô phỏng tình huống (Case Study)</div>
+            <h2 class="apple-section-title text-[28px] text-[#1D1D1F] mt-0.5">
+              “Bẫy trễ pha tín dụng” và cú sốc Tháng T của N.V.A.
+            </h2>
+            <p class="apple-body-copy mt-2">
+              Sinh viên năm hai tại TP.HCM, thu nhập <strong class="text-[#1D1D1F]">8.000.000 đ/tháng</strong> (trợ cấp 4,5 tr + làm thêm 3,5 tr). Đầu kỳ <span class="font-semibold text-[#1D1D1F]">t0</span>: Thanh khoản <strong class="text-[#1D1D1F]">4,0 tr</strong> (0,63 tháng), TS cá nhân <strong class="text-[#1D1D1F]">26,0 tr</strong>, Nợ 0 đ, <strong class="text-[#1D1D1F]">Net Worth = 30,0 tr</strong>.
+            </p>
+          </div>
+
+          <!-- 3 Transactions in Month T-1 (Compact Apple Gray Card) -->
+          <div class="apple-card-gray p-5 space-y-3">
+            <div class="flex items-center justify-between text-xs font-bold text-[#1D1D1F]">
+              <span>3 giao dịch BNPL cuối Tháng T-1 (Tổng gốc 6,3 triệu đ)</span>
+              <span class="text-[#F05123]">Độ trễ sao kê</span>
+            </div>
+
+            <div class="space-y-2 text-xs">
+              <div class="bg-white p-3 rounded-xl flex items-center justify-between border border-black/5">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-7 h-7 rounded-lg overflow-hidden bg-white shrink-0 border border-black/5"><svg class="brand-logo-svg-spaylater w-full h-full"><use href="#logo-spaylater"/></svg><img class="brand-logo-img-spaylater hidden w-full h-full object-cover"/></span>
+                  <div>
+                    <div class="font-bold text-[#1D1D1F]">SPayLater (3,6 tr • 6 kỳ)</div>
+                    <div class="text-[11px] text-[#6E6E73]">Màn hình 2,4tr (lâu bền) + Áo quần 1,2tr</div>
+                  </div>
+                </div>
+                <div class="text-right font-bold text-[#F05123]">706.200 đ/th</div>
+              </div>
+
+              <div class="bg-white p-3 rounded-xl flex items-center justify-between border border-black/5">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-7 h-7 rounded-lg overflow-hidden bg-white shrink-0 border border-black/5"><svg class="brand-logo-svg-tiktok w-full h-full"><use href="#logo-tiktok"/></svg><img class="brand-logo-img-tiktok hidden w-full h-full object-contain"/></span>
+                  <div>
+                    <div class="font-bold text-[#1D1D1F]">TikTok PayLater (1,5 tr • 3 kỳ)</div>
+                    <div class="text-[11px] text-[#6E6E73]">Mỹ phẩm, phụ kiện qua livestream</div>
+                  </div>
+                </div>
+                <div class="text-right font-bold text-[#1D1D1F]">544.250 đ/th</div>
+              </div>
+
+              <div class="bg-white p-3 rounded-xl flex items-center justify-between border border-black/5">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-7 h-7 rounded-lg overflow-hidden bg-white shrink-0 border border-black/5"><svg class="brand-logo-svg-momo w-full h-full"><use href="#logo-momo"/></svg><img class="brand-logo-img-momo hidden w-full h-full object-cover"/></span>
+                  <div>
+                    <div class="font-bold text-[#1D1D1F]">Ví Trả Sau MoMo (1,2 tr • 1 kỳ)</div>
+                    <div class="text-[11px] text-[#6E6E73]">Ăn uống, xem phim + phí DV 33.000 đ</div>
+                  </div>
+                </div>
+                <div class="text-right font-bold text-[#A50064]">1.233.000 đ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 7 Cols: Minimalist Chart (Hình 2.1) + 4 Giant Shock Numbers -->
+        <div class="col-span-7 space-y-5">
+
+          <!-- Hình 2.1 Minimalist Visual Comparison -->
+          <div class="apple-card-gray p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="text-sm font-bold text-[#1D1D1F]">Hình 2.1 • Cấu trúc dòng tiền chuẩn 50/30/20 so với Thực tế Tháng T</div>
+              <span class="apple-pill-badge text-[#A50064] font-bold">Vượt thu nhập 7,29%</span>
+            </div>
+
+            <!-- Bar 1: Standard (Black / Orange / Purple) -->
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs font-semibold">
+                <span class="text-[#1D1D1F]">Ngân sách chuẩn (8.000.000 đ = 100%)</span>
+                <span class="text-[#1D1D1F]">Tích lũy +1.600.000 đ (20%)</span>
+              </div>
+              <div class="h-8 rounded-xl overflow-hidden flex text-xs font-bold text-white">
+                <div style="width: 46.6%;" class="bg-[#1D1D1F] flex items-center justify-center">50% NEC (4tr)</div>
+                <div style="width: 28.0%;" class="bg-[#F05123] flex items-center justify-center border-l border-white/30">30% Cá nhân (2,4tr)</div>
+                <div style="width: 18.6%;" class="bg-[#A50064] flex items-center justify-center border-l border-white/30">20% (1,6tr)</div>
+                <div style="width: 6.8%;" class="bg-white/60 border-l-2 border-dashed border-[#1D1D1F]"></div>
+              </div>
+            </div>
+
+            <!-- Bar 2: Month T Shock (Black / Orange / Purple) -->
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs font-semibold">
+                <span class="text-[#1D1D1F]">Thực tế Tháng T (Tổng chi &amp; trả nợ: 8.583.450 đ = 107,29%)</span>
+                <span class="text-[#A50064] font-bold">Thâm hụt –583.450 đ (Savings –7,29%)</span>
+              </div>
+              <div class="h-8 rounded-xl overflow-hidden flex text-xs font-bold text-white">
+                <div style="width: 46.6%;" class="bg-[#1D1D1F] flex items-center justify-center">50% NEC (4tr)</div>
+                <div style="width: 24.5%;" class="bg-[#F05123] flex items-center justify-center border-l border-white/30">26,25% (2,1tr*)</div>
+                <div style="width: 28.9%;" class="bg-[#A50064] flex items-center justify-center border-l border-white/30">31,04% Trả nợ BNPL (2,48tr)</div>
+              </div>
+            </div>
+            <div class="text-[11px] text-[#6E6E73]">
+              (*) Dù N.V.A đã tự cắt 300.000 đ tiền mặt lọ PLAY (còn 500.000 đ), nghĩa vụ BNPL vẫn xóa sổ hoàn toàn khối 20% tích lũy (Chênh lệch ngân sách: –2.183.450 đ).
+            </div>
+          </div>
+
+          <!-- 4 Giant Callout Numbers (Replacing Table 2.3 & Hộp 2.1 text wall) -->
+          <div class="grid grid-cols-4 gap-4 pt-1">
+            <div class="apple-card-gray p-4">
+              <div class="text-[11px] font-semibold text-[#6E6E73]">Sao kê BNPL Tháng T</div>
+              <div class="apple-stat-giant text-[23px] text-[#F05123] mt-1">2,48 triệu</div>
+              <div class="text-[11px] text-[#6E6E73] mt-1">2.483.450 đ (Phí 183.450 đ), <strong class="text-[#1D1D1F]">gấp 3,1 lần</strong> lọ PLAY.</div>
+            </div>
+
+            <div class="apple-card-gray p-4">
+              <div class="text-[11px] font-semibold text-[#6E6E73]">Tỷ số chi trả nợ DPR</div>
+              <div class="apple-stat-giant text-[23px] text-[#A50064] mt-1">31,04%</div>
+              <div class="text-[11px] text-[#6E6E73] mt-1">Vượt xa ngưỡng 20%; Debt ratio vọt lên <strong class="text-[#1D1D1F]">14,70%</strong>.</div>
+            </div>
+
+            <div class="apple-card-gray p-4">
+              <div class="text-[11px] font-semibold text-[#6E6E73]">Sụt giảm Net Worth</div>
+              <div class="apple-stat-giant text-[23px] text-[#1D1D1F] mt-1">–9,28%</div>
+              <div class="text-[11px] text-[#6E6E73] mt-1">Mất <strong class="text-[#1D1D1F]">2.783.450 đ</strong> (còn 27,22 tr; 3,9 tr hàng tiêu dùng = 0đ).</div>
+            </div>
+
+            <div class="apple-card-gray p-4">
+              <div class="text-[11px] font-semibold text-[#6E6E73]">Thanh khoản còn lại</div>
+              <div class="apple-stat-giant text-[23px] text-[#F05123] mt-1">0,53 tháng</div>
+              <div class="text-[11px] text-[#6E6E73] mt-1">Còn <strong class="text-[#1D1D1F]">3.416.550 đ</strong> (chỉ đủ ~16 ngày sinh hoạt).</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- =================================================================== -->
+    <!-- TRANG 3: LỘ TRÌNH PHỤC HỒI 5 THÁNG & 3 QUY TẮC AN TOÀN (IMAGE 3, 4) -->
+    <!-- =================================================================== -->
+    <article id="page-3" class="apple-page-sheet">
+
+      <!-- Top Dark Nav Bar -->
+      <div class="apple-top-nav">
+        <div class="flex items-center gap-6">
+          <span class="font-bold text-white tracking-tight">HUB • Trường Đại học Ngân hàng TP.HCM</span>
+          <span class="text-zinc-400">Học phần Tài chính cá nhân</span>
+        </div>
+        <div class="flex items-center gap-5 text-zinc-300">
+          <span class="group-label-target">Nhóm tác giả • Lý thuyết: Kapoor và cs. (2016) &amp; Lê Hoài Ân (2025)</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-white/15 text-white text-[11px] font-semibold">Tháng 10/2026</span>
+        </div>
+      </div>
+
+      <!-- Sub-Header Bar -->
+      <div class="apple-sub-nav">
+        <div class="text-lg font-bold tracking-tight text-[#1D1D1F]">
+          Lộ Trình Phục Hồi 5 Tháng (T+1 → T+5) &amp; Bộ 3 Quy Tắc An Toàn
+        </div>
+        <div class="flex items-center gap-4 text-xs text-[#6E6E73]">
+          <span class="font-semibold text-[#1D1D1F]">Trang 03 / 03</span>
+          <span>•</span>
+          <span>Chương 3: Chiến lược xử lý nợ, TVM, Chi phí chìm &amp; Kết luận</span>
+        </div>
+      </div>
+
+      <!-- SECTION 3.1: RECOVERY CHARTS (HÌNH 3.1) + GIANT MILESTONES -->
+      <div class="px-14 pt-10 pb-9 border-b border-[#D2D2D7] space-y-7">
+
+        <!-- Top 2 Feature Cards (Inspired by Image 3 & 4 AppleCare+ Gray Cards) -->
+        <div class="grid grid-cols-12 gap-6">
+          <!-- Left 6 Cols: Pay or Save & Cut Spending -->
+          <div class="col-span-6 apple-card-gray p-6 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="apple-eyebrow text-[#1D1D1F]">Mục 3.1.1 • Quy trình 5 bước quản lý nợ &amp; “Pay or Save?”</div>
+              <h3 class="apple-section-title text-[22px] text-[#1D1D1F]">
+                Cắt giảm 75% lọ PLAY &amp; tất toán nợ ngắn hạn.
+              </h3>
+              <p class="text-[13px] text-[#6E6E73] leading-relaxed">
+                Thu hẹp lọ PLAY còn <strong class="text-[#1D1D1F]">200.000 đ</strong>, giảm EDU, GIVE, đệm NEC đưa chi đời sống từ 6,4 tr xuống <strong class="text-[#1D1D1F]">5.200.000 đ</strong> ở T+1 (<strong class="text-[#1D1D1F]">5.600.000 đ</strong> từ T+2). Tất toán Ví Trả Sau MoMo ở Tháng T (tắt khỏi mặc định) và trả dứt điểm TikTok PayLater ở T+2.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-black/5 flex items-center justify-between text-xs">
+              <span class="font-semibold text-[#1D1D1F]">Dự phòng mùa thi (thu nhập giảm):</span>
+              <span class="text-[#6E6E73]">Rút Quỹ dự phòng / Trả tối thiểu 15% MoMo / Cơ cấu nợ trước đáo hạn</span>
+            </div>
+          </div>
+
+          <!-- Right 6 Cols: Sunk Cost & TVM on SPayLater -->
+          <div class="col-span-6 apple-card-gray p-6 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="apple-eyebrow text-[#F05123]">Chi phí chìm (Sunk Cost) &amp; Giá trị thời gian của tiền (TVM)</div>
+              <h3 class="apple-section-title text-[22px] text-[#1D1D1F]">
+                Vì sao không tất toán sớm 4 kỳ SPayLater ở cuối T+1?
+              </h3>
+              <p class="text-[13px] text-[#6E6E73] leading-relaxed">
+                Phí chuyển đổi còn lại (<strong class="text-[#1D1D1F]">424.800 đ</strong>) là cố định khi mua (TPBank chỉ cho tất toán trước hạn khi chấm dứt thẻ). Trả sớm cả gốc lẫn phí (<strong class="text-[#1D1D1F]">2.824.800 đ</strong>) không tiết kiệm được phí mà kéo thanh khoản cuối T+1 từ <strong class="text-[#1D1D1F]">4,97 tr</strong> xuống <strong class="text-[#A50064]">2,14 tr (0,33 tháng)</strong>.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-black/5 flex items-center justify-between text-xs">
+              <span class="font-semibold text-[#A50064]">Quyết định tối ưu theo TVM:</span>
+              <span class="font-semibold text-[#1D1D1F]">Giữ lịch trả 706.200 đ/tháng đến T+5 &amp; gửi thặng dư vào tiết kiệm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Giant Milestones Row + 3 Minimalist Recovery Charts (Hình 3.1 a, b, c) -->
+        <div class="grid grid-cols-12 gap-8 items-center pt-2">
+
+          <!-- Left 4 Cols: 4 Giant Recovery Numbers -->
+          <div class="col-span-4 grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-2xl border border-[#D2D2D7]">
+              <div class="text-[11px] font-semibold text-[#6E6E73]">DPR ngay Tháng T+1</div>
+              <div class="apple-stat-giant text-[28px] text-[#1D1D1F] mt-1">15,63%</div>
+              <div class="text-[11px] text-[#6E6E73] mt-1">Về dưới ngưỡng 20%; Savings đạt <strong class="text-[#1D1D1F]">19,37%</strong>.</div>
+            </div>
+
+            <div class="p-4 rounded-2xl border border-[#D2D2D7]">
+              <div class="text-[11px] font-semibold text-[#6E6E73]">DPR Tháng T+3 → T+5</div>
+              <div class="apple-stat-giant text-[28px] text-[#A50064] mt-1">8,83%</div>
+              <div class="text-[11px] text-[#6E6E73] mt-1">Từ T+6 <strong class="text-[#1D1D1F]">DPR = 0%</strong> (xóa sạch 100% nợ).</div>
+            </div>
+
+            <div class="p-4 rounded-2xl border border-[#D2D2D7]">
+              <div class="text-[11px] font-semibold text-[#6E6E73]">Net Worth cuối T+5</div>
+              <div class="apple-stat-giant text-[28px] text-[#F05123] mt-1">39,00 tr</div>
+              <div class="text-[11px] text-[#6E6E73] mt-1"><strong class="text-[#1D1D1F]">38.997.050 đ</strong> (+30% so với đầu kỳ t0).</div>
+            </div>
+
+            <div class="p-4 rounded-2xl border border-[#D2D2D7]">
+              <div class="text-[11px] font-semibold text-[#6E6E73]">Thanh khoản cuối T+5</div>
+              <div class="apple-stat-giant text-[28px] text-[#A50064] mt-1">1,75 th</div>
+              <div class="text-[11px] text-[#6E6E73] mt-1"><strong class="text-[#1D1D1F]">11,20 tr</strong> (cần tích lũy thêm ~5 tháng).</div>
+            </div>
+          </div>
+
+          <!-- Right 8 Cols: Hình 3.1 Minimalist Trio Charts (Strictly Orange, Black, Purple) -->
+          <div class="col-span-8 apple-card-gray p-5">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-[#1D1D1F]">Hình 3.1 • Quỹ đạo phục hồi Net Worth, DPR và Tỷ số thanh khoản (Đầu kỳ t0 → T+5)</span>
+              <span class="text-[11px] text-[#6E6E73]">Bảng 2.3 &amp; 2.4</span>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4">
+              <!-- Chart (a) Net Worth -->
+              <div class="bg-white p-3.5 rounded-2xl border border-black/5">
+                <div class="text-[11px] font-bold text-[#1D1D1F] mb-2">(a) Net Worth (triệu đ)</div>
+                <svg viewBox="0 0 220 100" class="w-full h-24 overflow-visible">
+                  <line x1="10" y1="82" x2="210" y2="82" stroke="#D2D2D7" stroke-width="1"/>
+                  <polyline fill="none" stroke="#F05123" stroke-width="2.8" points="18,62 50,76 82,63 114,51 146,39 178,27 204,16"/>
+                  <circle cx="18" cy="62" r="3.5" fill="#1D1D1F"/>
+                  <text x="18" y="53" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1D1D1F">30,0</text>
+                  <circle cx="50" cy="76" r="4.5" fill="#A50064"/>
+                  <text x="50" y="92" text-anchor="middle" font-size="8.5" font-weight="800" fill="#A50064">27,22</text>
+                  <circle cx="114" cy="51" r="3" fill="#1D1D1F"/>
+                  <text x="114" y="42" text-anchor="middle" font-size="8" font-weight="600" fill="#1D1D1F">32,1</text>
+                  <circle cx="204" cy="16" r="4.5" fill="#F05123"/>
+                  <text x="195" y="9" text-anchor="middle" font-size="9" font-weight="800" fill="#F05123">39,00</text>
+                  <text x="18" y="96" text-anchor="middle" font-size="8" fill="#6E6E73">t0</text>
+                  <text x="50" y="96" text-anchor="middle" font-size="8" font-weight="700" fill="#A50064">T</text>
+                  <text x="114" y="96" text-anchor="middle" font-size="8" fill="#6E6E73">T+2</text>
+                  <text x="204" y="96" text-anchor="middle" font-size="8" font-weight="700" fill="#F05123">T+5</text>
+                </svg>
+              </div>
+
+              <!-- Chart (b) DPR -->
+              <div class="bg-white p-3.5 rounded-2xl border border-black/5">
+                <div class="text-[11px] font-bold text-[#1D1D1F] mb-2">(b) Tỷ số DPR (Ngưỡng 20%)</div>
+                <svg viewBox="0 0 220 100" class="w-full h-24 overflow-visible">
+                  <line x1="10" y1="44" x2="210" y2="44" stroke="#1D1D1F" stroke-dasharray="3,3" stroke-width="1"/>
+                  <text x="208" y="40" text-anchor="end" font-size="7.5" font-weight="700" fill="#1D1D1F">20%</text>
+                  <line x1="10" y1="82" x2="210" y2="82" stroke="#D2D2D7" stroke-width="1"/>
+                  <rect x="38" y="20" width="20" height="62" rx="3" fill="#A50064"/>
+                  <text x="48" y="15" text-anchor="middle" font-size="8.5" font-weight="800" fill="#A50064">31,04%</text>
+                  <rect x="68" y="52" width="18" height="30" rx="3" fill="#F05123"/>
+                  <rect x="94" y="52" width="18" height="30" rx="3" fill="#F05123"/>
+                  <text x="89" y="48" text-anchor="middle" font-size="8" font-weight="700" fill="#F05123">15,63%</text>
+                  <rect x="122" y="65" width="16" height="17" rx="3" fill="#1D1D1F"/>
+                  <rect x="146" y="65" width="16" height="17" rx="3" fill="#1D1D1F"/>
+                  <rect x="170" y="65" width="16" height="17" rx="3" fill="#1D1D1F"/>
+                  <text x="154" y="61" text-anchor="middle" font-size="8" font-weight="800" fill="#1D1D1F">8,83%</text>
+                  <text x="18" y="96" text-anchor="middle" font-size="8" fill="#6E6E73">t0</text>
+                  <text x="48" y="96" text-anchor="middle" font-size="8" font-weight="700" fill="#A50064">T</text>
+                  <text x="89" y="96" text-anchor="middle" font-size="8" fill="#F05123">T+1..2</text>
+                  <text x="154" y="96" text-anchor="middle" font-size="8" font-weight="700" fill="#1D1D1F">T+3..5</text>
+                </svg>
+              </div>
+
+              <!-- Chart (c) Liquidity Ratio -->
+              <div class="bg-white p-3.5 rounded-2xl border border-black/5">
+                <div class="text-[11px] font-bold text-[#1D1D1F] mb-2">(c) Thanh khoản (Mục tiêu 3th)</div>
+                <svg viewBox="0 0 220 100" class="w-full h-24 overflow-visible">
+                  <line x1="10" y1="16" x2="210" y2="16" stroke="#F05123" stroke-dasharray="3,3" stroke-width="1"/>
+                  <text x="14" y="12" font-size="7.5" font-weight="700" fill="#F05123">Mục tiêu 3,0 tháng</text>
+                  <line x1="10" y1="82" x2="210" y2="82" stroke="#D2D2D7" stroke-width="1"/>
+                  <polyline fill="none" stroke="#A50064" stroke-width="2.5" points="18,68 50,71 82,65 114,60 146,53 178,46 204,40"/>
+                  <circle cx="18" cy="68" r="3" fill="#1D1D1F"/>
+                  <text x="18" y="61" text-anchor="middle" font-size="8" fill="#1D1D1F">0,63</text>
+                  <circle cx="50" cy="71" r="4" fill="#F05123"/>
+                  <text x="50" y="80" text-anchor="middle" font-size="8" font-weight="800" fill="#F05123">0,53</text>
+                  <circle cx="114" cy="60" r="3" fill="#1D1D1F"/>
+                  <text x="114" y="52" text-anchor="middle" font-size="8" fill="#1D1D1F">0,96</text>
+                  <circle cx="204" cy="40" r="4.5" fill="#A50064"/>
+                  <text x="196" y="32" text-anchor="middle" font-size="8.5" font-weight="800" fill="#A50064">1,75</text>
+                  <text x="18" y="96" text-anchor="middle" font-size="8" fill="#6E6E73">t0</text>
+                  <text x="50" y="96" text-anchor="middle" font-size="8" font-weight="700" fill="#F05123">T</text>
+                  <text x="114" y="96" text-anchor="middle" font-size="8" fill="#6E6E73">T+2</text>
+                  <text x="204" y="96" text-anchor="middle" font-size="8" font-weight="700" fill="#A50064">T+5</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECTION 3.2: 3 SAFETY RULES (Image 5 & 6 3-Column Layout with Pill Badges) -->
+      <div class="px-14 py-9 border-b border-[#D2D2D7]">
+        <div class="mb-6">
+          <div class="apple-eyebrow text-[#A50064]">Mục 3.2 • Giải pháp phòng ngừa nợ quá tải</div>
+          <h2 class="apple-section-title text-[26px] text-[#1D1D1F] mt-0.5">
+            Bộ 3 quy tắc tích hợp an toàn tài chính khi sử dụng BNPL.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-3 apple-hairline-cols">
+          <!-- Rule 1 (Shopee Orange) -->
+          <div class="pr-8 flex flex-col justify-between">
+            <div class="space-y-2.5">
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#F05123] text-white text-[11.5px] font-semibold">Quy tắc 01 • Mục 3.2.1</span>
+              <h3 class="text-lg font-bold text-[#1D1D1F] pt-1">
+                Khóa trần BNPL trong lọ PLAY (10%) &amp; giữ DPR &lt; 20%.
+              </h3>
+              <p class="text-[13px] text-[#6E6E73] leading-relaxed">
+                Mọi khoản trả góp Wants phải trừ thẳng vào <strong class="text-[#1D1D1F]">lọ PLAY (tối đa 800.000 đ/tháng</strong> với N.V.A), tuyệt đối không lấn sang khối 20% (LTS, FFA). Riêng 1 đơn TikTok (544.250 đ) hoặc SPayLater (706.200 đ) đã chạm trần, chặn ngay 2 đơn còn lại.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#D2D2D7]/60 text-xs font-semibold text-[#F05123]">
+              Chặn đứng hiệu ứng cộng dồn nhiều nền tảng ›
+            </div>
+          </div>
+
+          <!-- Rule 2 (TikTok Black) -->
+          <div class="px-8 flex flex-col justify-between">
+            <div class="space-y-2.5">
+              <span class="apple-pill-badge-dark">Quy tắc 02 • Mục 3.2.2</span>
+              <h3 class="text-lg font-bold text-[#1D1D1F] pt-1">
+                “48 giờ hạ nhiệt” kết hợp tự động hóa “Pay Yourself First”.
+              </h3>
+              <p class="text-[13px] text-[#6E6E73] leading-relaxed">
+                Hàng không thiết yếu trên livestream / flash sale phải nằm trong giỏ ít nhất <strong class="text-[#1D1D1F]">48 giờ</strong> và qua bước so sánh giá. Song song, cài lệnh tự động trích <strong class="text-[#1D1D1F]">20% thu nhập (LTS + FFA)</strong> sang tài khoản tiết kiệm riêng ngay ngày nhận tiền.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#D2D2D7]/60 text-xs font-semibold text-[#1D1D1F]">
+              Khôi phục 4 pha mua sắm có nghiên cứu ›
+            </div>
+          </div>
+
+          <!-- Rule 3 (MoMo Purple) -->
+          <div class="pl-8 flex flex-col justify-between">
+            <div class="space-y-2.5">
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#A50064] text-white text-[11.5px] font-semibold">Quy tắc 03 • Mục 3.2.3</span>
+              <h3 class="text-lg font-bold text-[#1D1D1F] pt-1">
+                “Đối ứng thanh khoản 1:1” bảo vệ điểm tín dụng CIC.
+              </h3>
+              <p class="text-[13px] text-[#6E6E73] leading-relaxed">
+                Chỉ dùng BNPL khi: <strong class="text-[#1D1D1F]">(1)</strong> trả sau 1 kỳ miễn 100% lãi/phí (hoặc ưu đãi giảm giá &gt; tổng phí); và <strong class="text-[#1D1D1F]">(2)</strong> trích khóa ngay <strong class="text-[#1D1D1F]">100% số tiền tương ứng</strong> từ lọ chi tiêu vào tài khoản chờ để tất toán toàn bộ trước/đúng hạn.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#D2D2D7]/60 text-xs font-semibold text-[#A50064]">
+              Biến BNPL thành công cụ thanh toán 0đ phí ›
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPLE LEGAL DISCLAIMERS & REFERENCES FOOTER (Inspired by Bottom of Image 3 & 4) -->
+      <footer class="bg-[#F5F5F7] px-14 py-7 apple-footnote space-y-2.5">
+        <div>
+          <strong class="text-[#1D1D1F]">◊ Kết luận cốt lõi &amp; Hạn chế nghiên cứu:</strong> Ví Trả Sau MoMo, SPayLater và TikTok PayLater giúp giãn thời điểm thanh toán nhưng ẩn chi phí thực rất cao (APR thực 52,35%–60,01%/năm; EAR 66,94%–79,61%/năm). Kỷ luật ngân sách 50/30/20 – Sáu chiếc lọ kết hợp tư duy TVM, Chi phí chìm và 3 quy tắc an toàn là chìa khóa bảo vệ tài sản ròng và điểm CIC. Tiểu luận dựa trên một tình huống giả định và biểu phí cập nhật đến tháng 10/2026; hướng nghiên cứu tiếp theo là khảo sát thực tế hành vi dùng BNPL của sinh viên TP.HCM.
+        </div>
+        <div>
+          <strong class="text-[#1D1D1F]">Ghi chú kiểm toán số liệu trong bài:</strong> (1) Khoản <em>Đệm NEC 400.000 đ (5%)</em> thuộc nhóm Cá nhân 30% ở Bảng 2.2 &amp; Hình 2.1, và được gộp cùng NEC cứng (thành 4.400.000 đ) ở Bảng 2.3; (2) Chênh lệch dòng tiền ròng <em>–2.183.450 đ</em> ở Bảng 2.3 phản ánh mức hụt bất lợi thực tế so với kế hoạch (+1.600.000 đ xuống –583.450 đ); (3) Mẫu số của Tỷ số thanh khoản xuyên suốt Bảng 2.4 là mức chi sinh hoạt chuẩn 6.400.000 đ/tháng.
+        </div>
+        <div>
+          <strong class="text-[#1D1D1F]">Tài liệu tham khảo:</strong> Kapoor, Dlabay, &amp; Hughes (2016), <em>Business and Personal Finance</em>; Warren &amp; Tyagi (2005); Eker (2005); Lê Hoài Ân (2025), <em>Bài giảng Tài chính cá nhân</em>; Từ điển 20 thuật ngữ cốt lõi Tài chính cá nhân (HUB); Nguyễn Thị Bình và cs. (2024), <em>Tạp chí Công Thương</em>; NHNN (TT 15/2023/TT-NHNN sửa đổi bởi TT 46/2026/TT-NHNN; TT 31/2024/TT-NHNN sửa đổi bởi TT 37/2025/TT-NHNN); Điều khoản &amp; Biểu phí MoMo (2026a, 2026b), TPBank (2026), Techcombank (2026), VietCredit (2026a, 2026b), Điện Máy Xanh (2026), Thuý Huyên (2026).
+        </div>
+      </footer>
+
+    </article>
+
+  </main>
+
+  <script>
+    const defaultGroupLabel = 'Nhóm tác giả • Lý thuyết: Kapoor và cs. (2016) & Lê Hoài Ân (2025)';
+
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden');
+    }
+
+    function updateGroupText(val) {
+      const text = (!val || val.trim() === '') ? defaultGroupLabel : val.trim();
+      document.querySelectorAll('.group-label-target').forEach(el => {
+        el.textContent = text;
+      });
+    }
+
+    function resetGroupText() {
+      document.getElementById('groupInput').value = '';
+      updateGroupText('');
+    }
+
+    function swapLogoFile(event, brandKey) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const dataUrl = e.target.result;
+        document.querySelectorAll(`.brand-logo-svg-${brandKey}`).forEach(svg => svg.classList.add('hidden'));
+        document.querySelectorAll(`.brand-logo-img-${brandKey}`).forEach(img => {
+          img.src = dataUrl;
+          img.classList.remove('hidden');
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+
+    async function exportSinglePage(elementId, filename) {
+      const toast = document.getElementById('exportToast');
+      const toastMsg = document.getElementById('exportToastMsg');
+      const target = document.getElementById(elementId);
+      if (!target) return;
+
+      try {
+        toast.classList.remove('hidden');
+        toastMsg.textContent = `Đang kết xuất "${filename}" độ phân giải Ultra-HD (3x)...`;
+
+        await document.fonts.ready;
+        await new Promise(r => setTimeout(r, 150));
+
+        const canvas = await html2canvas(target, {
+          scale: 3,
+          useCORS: true,
+          backgroundColor: '#FFFFFF',
+          logging: false,
+          windowWidth: 1200
+        });
+
+        const dataUrl = canvas.toDataURL('image/png', 1.0);
+        const link = document.createElement('a');
+        link.download = filename;
+        link.href = dataUrl;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        toastMsg.textContent = `Đã tải xuống "${filename}" thành công!`;
+        setTimeout(() => toast.classList.add('hidden'), 2000);
+      } catch (err) {
+        console.error(err);
+        toastMsg.textContent = 'Lỗi xuất ảnh. Hãy thử lại hoặc dùng chức năng In PDF.';
+        setTimeout(() => toast.classList.add('hidden'), 3000);
+      }
+    }
+
+    async function exportAllThreePages() {
+      await exportSinglePage('page-1', 'Trang_1_Ly_Thuyet_Va_Bo_Ba_BNPL.png');
+      await new Promise(r => setTimeout(r, 450));
+      await exportSinglePage('page-2', 'Trang_2_Lai_Suat_Thuc_Va_Cu_Soc_Thang_T.png');
+      await new Promise(r => setTimeout(r, 450));
+      await exportSinglePage('page-3', 'Trang_3_Lo_Trinh_Phuc_Hoi_Va_3_Quy_Tac.png');
+    }
+  </script>
+</body>
+</html>
